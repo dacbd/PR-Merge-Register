@@ -3,7 +3,7 @@ name: Register the model for the given pipeline branch
 on:
   push:
     branches:
-      - "master"
+      - "main"
 
 # on:
 #   pull_request:
