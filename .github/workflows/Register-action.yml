@@ -10,7 +10,7 @@ on:
 #     types:
 #       - closed
 #     branches:
-#       - "master"
+#       - "main"
 
 permissions: write-all
 
@@ -32,18 +32,16 @@ jobs:
     - name: Register Model
       run: |
 
+        # --- IGNORE BRANCH NAME FOR NOW ---
         # REGISTER_MODEL_NAME=$(echo ${{ github.event.pull_request.head.ref }} | awk -F"-" '{print $1}')
+        
         REGISTER_MODEL_NAME=$(echo ${{github.ref_name}} | awk -F"-" '{print $1}')
 
         git config user.name "Github-Bot"
         git config user.email "Github-Bot@no-reply.com"
 
-        # git tag model@v0.0.1
-        # git push origin model@v0.0.1
+        gto -v register ${REGISTER_MODEL_NAME}
 
-        # gto register test --repo https://github.com/Hestia-Homes/ML/
-        # echo "chicken" >> test.md
-
-        gto register ${REGISTER_MODEL_NAME}
+        # --- IGNORE SUBSEQUENT STEPS ---
         # gto assign regression --stage dev
         # gto show
