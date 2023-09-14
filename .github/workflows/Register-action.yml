@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "main"
+  workflow_dispatch:
 
 # on:
 #   pull_request:
@@ -40,7 +41,7 @@ jobs:
         git config user.name "Github-Bot"
         git config user.email "Github-Bot@no-reply.com"
 
-        gto -v register ${REGISTER_MODEL_NAME}
+        gto -v register regression
 
         # --- IGNORE SUBSEQUENT STEPS ---
         # gto assign regression --stage dev
