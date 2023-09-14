@@ -46,6 +46,7 @@ jobs:
         git log -n 2
         
         gto -v register regression
+        git push origin regression@v0.0.1
 
         # --- IGNORE SUBSEQUENT STEPS ---
         # gto assign regression --stage dev
