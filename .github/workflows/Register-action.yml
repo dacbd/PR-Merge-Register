@@ -41,6 +41,7 @@ jobs:
         git config user.name "Github-Bot"
         git config user.email "Github-Bot@no-reply.com"
         git show
+        git remote -v show
         echo $GITHUB_REF
         git log -n 2
         
