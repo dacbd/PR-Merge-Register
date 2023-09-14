@@ -40,7 +40,10 @@ jobs:
 
         git config user.name "Github-Bot"
         git config user.email "Github-Bot@no-reply.com"
-
+        git show
+        echo $GITHUB_REF
+        git log -n 2
+        
         gto -v register regression
 
         # --- IGNORE SUBSEQUENT STEPS ---
